@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Commande Confirmée | SmartWatch Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============ STYLE GLOBAL ============ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f0f4ff, #e2ebf7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    /* ============ CONTENEUR PREMIUM ============ */
+    .merci-container {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 450px;
+      width: 90%;
+      animation: fadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95) translateY(20px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    /* ============ ÉLÉMENTS VISUELS ============ */
+    .check-icon {
+      font-size: 50px;
+      color: #2b8a3e;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      color: #1d1d1f;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .details {
+      background: #f8faff;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 25px 0;
+      text-align: left;
+      border-left: 5px solid #2b8a3e;
+    }
+
+    .details strong {
+      color: #333;
+    }
+
+    /* ============ BOUTON ============ */
+    .btn-retour {
+      display: inline-block;
+      margin-top: 15px;
+      background: #007bff; /* Changé en bleu pour correspondre à ton identité visuelle */
+      color: white;
+      padding: 12px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+    .btn-retour:hover {
+      background: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <main class="merci-container" role="main">
+    <span class="check-icon" aria-hidden="true">✅</span>
+    <h1 id="main-title">Commande Confirmée !</h1>
+    <p id="merci-nom">Chargement de vos informations...</p>
+
+    <div class="details" id="details-box">
+      <p id="merci-modele"></p>
+      <p id="merci-prix"></p>
+      <p id="merci-livraison" style="font-size: 0.9rem; margin-top: 10px; color: #777;"></p>
+    </div>
+
+    <p>Un conseiller vous contactera sous peu pour finaliser la livraison.</p>
+
+    <a href="../index.html" class="btn-retour">Retour à l'accueil</a>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 🧩 Récupérer les infos sauvegardées dans localStorage
+      const commande = JSON.parse(localStorage.getItem("derniereCommande"));
+
+      if (commande) {
+        document.getElementById("merci-nom").innerHTML = `Merci <strong>${commande.nom}</strong> pour votre confiance !`;
+        document.getElementById("merci-modele").innerHTML = `🔹 <strong>Modèle :</strong> ${commande.modele}`;
+        document.getElementById("merci-prix").innerHTML = `🔹 <strong>Montant :</strong> ${commande.prix} €`;
+        document.getElementById("merci-livraison").innerHTML = `📍 Expédition prévue vers : ${commande.telephone || commande.email}`;
+
+        // Optionnel : On garde les données 10 secondes puis on nettoie
+        // Pour permettre un rafraîchissement accidentel de la page
+        setTimeout(() => {
+          localStorage.removeItem("derniereCommande");
+        }, 10000);
+      } else {
+        window.location.href = "../index.html"; // Redirection automatique si pas de commande
+      }
+    });
+  </script>
+</body>
+</html>

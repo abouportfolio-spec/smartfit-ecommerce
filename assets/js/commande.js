@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // ================================
   // 2️⃣ DÉFINITION DES PRODUITS
   // ================================
-  const produits = {
+const produits = {
     Basic: {
       prix: 49,
-      image: "images/montre-basic.jpg",
+      image: "../assets/img/smartwatch1.png", // Utilise tes vraies images
       specs: [
         "Suivi de pas quotidien",
         "Notifications simples",
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     Standard: {
       prix: 79,
-      image: "images/montre-standard.jpg",
+      image: "../assets/img/smartwatch4.png",
       specs: [
         "Suivi complet santé + sommeil",
         "Notifications intelligentes",
@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
     Premium: {
-      prix: 129,
-      image: "images/montre-premium.jpg",
+      prix: 119, // Aligné avec ton index.html
+      image: "../assets/img/smartwatch5.png",
       specs: [
         "Suivi santé + sommeil + ECG",
         "Applications intégrées",
@@ -49,10 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     }
   };
-
   const produit = produits[modele] || {
     prix: prix || "-",
-    image: "images/montre.jpg",
+    image: "../assets/img/images/montre.jpg",
     specs: []
   };
 
@@ -156,4 +155,15 @@ if (response.ok) {
     }, 4000);
   }
 
+});
+// Script pour capturer le choix du modèle
+document.querySelectorAll('#pricing .btn-primary').forEach(button => {
+    button.addEventListener('click', (e) => {
+        // On récupère le nom du modèle (le texte du h3 dans la carte)
+        const card = e.target.closest('.pricing-card');
+        const modele = card.querySelector('h3').innerText;
+
+        // On stocke dans le navigateur
+        localStorage.setItem("produitSelectionne", modele);
+    });
 });

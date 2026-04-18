@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html { scroll-behavior: smooth; }
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
@@ -1136,4 +1136,58 @@ footer .socials a:hover {
 @keyframes spin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
+}
+/* ====================================
+   SECTION TARIFS - OPTIMISATION
+==================================== */
+.pricing-grid {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Pour que toutes les cartes aient la même hauteur */
+    gap: 30px;
+    padding: 40px 0;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Effet "Popular" pour la carte Standard */
+.pricing-card.popular {
+    transform: scale(1.05); /* Légèrement plus grande */
+    border: 2px solid #007bff; /* Bordure bleue pour ton identité */
+    box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+/* Animation au survol */
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+.pricing-card .btn-primary {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.pricing-card .btn-primary:hover {
+    background-color: #0056b3;
 }

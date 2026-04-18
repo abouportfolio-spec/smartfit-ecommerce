@@ -38,13 +38,19 @@ a {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   font-size: 1.3rem;
   font-weight: 600;
-  color: #007bff;
+  color: #333;
 }
 
 .logo span {
   color: #333;
+}
+.logo strong {
+  color: #007bff; /* On met le "Pro" en bleu pour le rappel de marque */
+  margin-left: 5px;
 }
 
 .btn-retour {
@@ -224,9 +230,12 @@ a {
 
   <!-- ===================== HEADER ===================== -->
   <header class="header">
-    <div class="logo">🕐 <span>SmartFit</span></div>
-    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
-  </header>
+  <div class="logo">
+    <img src="../assets/img/logo.png" alt="Logo SmartWatch Pro" style="max-height: 40px; margin-right: 10px;">
+    <span>SmartWatch <strong>Pro</strong></span>
+  </div>
+  <a href="../index.html" class="btn-retour">← Retour à l'accueil</a>
+</header>
 
   <!-- ===================== SECTION COMMANDE ===================== -->
   <main class="commande-section">
@@ -235,7 +244,7 @@ a {
       <!-- ==== Détails du produit ==== -->
       <aside class="produit-preview">
         <h2>Votre sélection</h2>
-        <div class="card-produit">            
+        <div class="card-produit">
           <h3 id="produit-nom">Modèle : -</h3>
           <p class="prix" id="produit-prix">Prix : - €</p>
           <ul id="produit-features">
@@ -298,7 +307,20 @@ a {
   </footer>
 
   <!-- ===================== SCRIPT ===================== -->
-  <script src="assets/js/commande.js"></script>
+  <script src="../assets/js/commande.js"></script>
+  <script>
+      // Dans commande.js
+    document.addEventListener('DOMContentLoaded', () => {
+        // On récupère les infos stockées lors du clic sur "Commander" sur la page index
+        const nom = localStorage.getItem('produitNom') || 'Standard';
+        const prix = localStorage.getItem('produitPrix') || '79';
 
+        // On remplit le formulaire automatiquement
+        document.getElementById('produit-nom').innerText = `Modèle : ${nom}`;
+        document.getElementById('produit-prix').innerText = `Prix : ${prix} €`;
+        document.getElementById('modele').value = nom;
+        document.getElementById('prix').value = prix;
+    });
+  </script>
 </body>
 </html>

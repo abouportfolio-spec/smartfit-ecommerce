@@ -6,6 +6,32 @@
   <title>SmartWatch Pro - Landing Page</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <meta property="og:title" content="SmartWatch Pro - L'avenir à votre poignet">
+  <meta property="og:description" content="Découvrez la montre connectée nouvelle génération créée par Abou Toure.">
+  <meta property="og:image" content="assets/img/smartwatch4.png">
+  <meta property="og:url" content="ta-super-url.com">
+  <style>
+    .pricing-card.popular {
+      transform: scale(1.05);
+      border: 2px solid #ffd700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      position: relative;
+    }
+
+    .pricing-card.popular .badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #ffd700;
+      color: #000;
+      padding: 5px 15px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      border-radius: 20px;
+      text-transform: uppercase;
+    }
+  </style>
 </head>
 <body>
 <!-- ====================================
@@ -13,13 +39,13 @@
      ==================================== -->
 <header class="hero">
 <!-- ====================================
-     NAVIGATION MODERNE
+     NAVBAR
 ==================================== -->
 <nav class="navbar">
   <div class="navbar-container">
     <!-- Logo -->
     <div class="logo">
-      <img src="assets/img/logo.png" alt="Logo SmartWatch Pro">
+      <img src="assets/img/logo.png" alt="Logo SmartWatch Pro" loading="lazy">
       <span>SmartWatch <strong>Pro</strong></span>
     </div>
 
@@ -64,7 +90,7 @@
 
   <!-- Background Overlay / Animé -->
   <div class="hero-bg">
-    <img src="assets/img/smartwatch4.png" alt="SmartWatch Pro background" class="bg-image">
+    <img src="assets/img/smartwatch4.png" alt="SmartWatch Pro background" class="bg-image" loading="lazy">
     <div class="bg-overlay"></div>
   </div>
 </header>
@@ -74,7 +100,7 @@
 <section id="about" class="about">
   <div class="about-container">
     <div class="about-image">
-      <img src="assets/img/logo.png" alt="SmartWatch Pro - Lifestyle" />
+      <img src="assets/img/logo.png" alt="SmartWatch Pro - Lifestyle" loading="lazy"/>
       <div class="image-overlay"></div>
     </div>
 
@@ -225,14 +251,14 @@
   <section id="gallery" class="gallery">
     <h2>Galerie</h2>
     <div class="gallery-grid">
-      <img src="assets/img/smartwatch1.png" alt="SmartWatch vue 1">
-      <img src="assets/img/smartwatch2.png" alt="SmartWatch vue 2">
-      <img src="assets/img/smartwatch3.png" alt="SmartWatch vue 3">
-      <img src="assets/img/smartwatch4.png" alt="SmartWatch vue 4">
-      <img src="assets/img/smartwatch5.png" alt="SmartWatch vue 5">
-      <img src="assets/img/smartwatch6.png" alt="SmartWatch vue 6">
-      <img src="assets/img/smartwatch7.png" alt="SmartWatch vue 7">
-      <img src="assets/img/smartwatch8.png" alt="SmartWatch vue 8">
+      <img src="assets/img/smartwatch1.png" alt="SmartWatch vue 1" loading="lazy">
+      <img src="assets/img/smartwatch2.png" alt="SmartWatch vue 2" loading="lazy">
+      <img src="assets/img/smartwatch3.png" alt="SmartWatch vue 3" loading="lazy">
+      <img src="assets/img/smartwatch4.png" alt="SmartWatch vue 4" loading="lazy">
+      <img src="assets/img/smartwatch5.png" alt="SmartWatch vue 5" loading="lazy">
+      <img src="assets/img/smartwatch6.png" alt="SmartWatch vue 6" loading="lazy">
+      <img src="assets/img/smartwatch7.png" alt="SmartWatch vue 7" loading="lazy">
+      <img src="assets/img/smartwatch8.png" alt="SmartWatch vue 8" loading="lazy">
     </div>
   </section>
 
@@ -264,48 +290,51 @@
   <!-- ====================================
        SECTION TARIFS
        ==================================== -->
-  <section id="pricing" class="pricing">
-    <h2>Tarifs</h2>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <h3>Basic</h3>
-        <p>Fonctions essentielles pour commencer</p>
-        <span class="price">49€</span>
-        <ul>
-          <li>Suivi de pas</li>
-          <li>Notifications basiques</li>
-          <li>Batterie 2 jours</li>
-        </ul>
-        <button class="btn btn-primary">Commander</button>
-      </div>
-      <div class="pricing-card">
-        <h3>Standard</h3>
-        <p>Pour les utilisateurs réguliers</p>
-        <span class="price">79€</span>
-        <ul>
-          <li>Suivi complet santé</li>
-          <li>Notifications intelligentes</li>
-          <li>Batterie 4 jours</li>
-          <li>Design personnalisable</li>
-        </ul>
-        <button class="btn btn-primary">Commander</button>
-      </div>
-      <div class="pricing-card">
-        <h3>Premium</h3>
-        <p>Toutes les fonctionnalités avancées</p>
-        <span class="price">119€</span>
-        <ul>
-          <li>Suivi santé complet + sommeil</li>
-          <li>Notifications + Apps</li>
-          <li>Batterie 7 jours</li>
-          <li>Support prioritaire</li>
-          <li>Accès aux mises à jour exclusives</li>
-        </ul>
-        <button class="btn btn-primary">Commander</button>
-      </div>
-    </div>
-  </section>
+  <section id="pricing" class="pricing" aria-labelledby="pricing-title">
+  <h2 id="pricing-title">Nos Tarifs</h2>
 
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <h3>Basic</h3>
+      <p>Fonctions essentielles pour commencer</p>
+      <span class="price">49€</span>
+      <ul>
+        <li>Suivi de pas</li>
+        <li>Notifications basiques</li>
+        <li>Batterie 2 jours</li>
+      </ul>
+      <a href="pages/commande.html" class="btn btn-primary">Commander</a>
+    </div>
+
+    <div class="pricing-card popular">
+      <div class="badge">Le plus populaire</div>
+      <h3>Standard</h3>
+      <p>Pour les utilisateurs réguliers</p>
+      <span class="price">79€</span>
+      <ul>
+        <li>Suivi complet santé</li>
+        <li>Notifications intelligentes</li>
+        <li>Batterie 4 jours</li>
+        <li>Design personnalisable</li>
+      </ul>
+      <a href="pages/commande.html" class="btn btn-primary">Commander</a>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Premium</h3>
+      <p>Toutes les fonctionnalités avancées</p>
+      <span class="price">119€</span>
+      <ul>
+        <li>Suivi santé complet + sommeil</li>
+        <li>Notifications + Apps</li>
+        <li>Batterie 7 jours</li>
+        <li>Support prioritaire</li>
+        <li>Accès aux mises à jour exclusives</li>
+      </ul>
+      <a href="pages/commande.html" class="btn btn-primary">Commander</a>
+    </div>
+  </div>
+</section>
   <!-- ====================================
        SECTION FAQ
        ==================================== -->
@@ -347,7 +376,7 @@
     <div class="section-header">
       <h2 class="section-title">Restez connecté</h2>
       <p class="section-subtitle">
-        Abonnez-vous à notre newsletter pour recevoir en avant-première les <strong>nouvelles fonctionnalités</strong>, 
+        Abonnez-vous à notre newsletter pour recevoir en avant-première les <strong>nouvelles fonctionnalités</strong>,
         <strong>offres exclusives</strong> et <strong>mises à jour SmartWatch Pro</strong>.
       </p>
     </div>
@@ -372,7 +401,7 @@
 
     <!-- Illustration décorative -->
     <div class="signup-illustration">
-      <img src="assets/img/smartwatch5.png" alt="Illustration inscription SmartWatch Pro">
+      <img src="assets/img/smartwatch5.png" alt="Illustration inscription SmartWatch Pro" loading="lazy">
     </div>
 
   </div>
@@ -381,42 +410,30 @@
   <!-- ====================================
        FOOTER
        ==================================== -->
-  <footer>
-    <div class="footer-content">
-      <p>&copy; 2025 Abou Toure. Tous droits réservés.</p>
-      <div class="socials">
-        <a href="#">Facebook</a> | <a href="#">
-            <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
-      </div>
-      <p class="footer-note">Site réalisé par Abou Toure. Design & Développement Web.</p>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Abou Toure. Tous droits réservés.</p>
+
+    <address class="socials">
+          <a href="https://www.facebook.com/profile.php?id=61582829226280" target="_blank" rel="noopener">
+            <i class="fab fa-facebook"></i> Facebook
+          </a>
+          <a href="https://www.instagram.com/tourewebdev/" target="_blank" rel="noopener">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+    </address>
+
+    <div class="footer-info">
+      <p class="footer-note">Site conçu par <strong>Abou Toure</strong> — Software Architect & Web Developer.</p>
     </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- ====================================
        SCRIPT JS
        ==================================== -->
   <script src="assets/js/script.js"></script>
 
-  <!-- ====================================
-       COMMENTAIRES ET NOTES
-       ==================================== -->
-  <!--
-    - Cette page est structurée en sections claires :
-      1. Header / Hero avec navigation
-      2. À propos de la SmartWatch
-      3. Fonctionnalités principales (8 cartes)
-      4. Galerie (8 images)
-      5. Témoignages (4 avis)
-      6. Tarifs (3 formules)
-      7. FAQ étendue (6 questions)
-      8. Inscription / Newsletter
-      9. Footer avec réseaux sociaux
-    - Le HTML est conçu pour être responsive, lisible et facile à personnaliser.
-    - Les images doivent être placées dans un dossier "images/" avec les noms correspondants :
-      smartwatch1.png à smartwatch8.png
-    - Les boutons utilisent des classes "btn-primary" et "btn-secondary" pour cohérence.
-    - Le script.js ajoute scroll smooth, animations de cartes, formulaire interactif et header dynamique.
-  -->
 
 </body>
 </html>
